@@ -6,6 +6,10 @@ const router = Router();
 // All routes
 
 // Users
+router.post("/user/register1", ()=>{
+    console.log("try")
+});
+
 router.use("/user", userRoute);
 
 export default router;

@@ -6,6 +6,16 @@ const createUser = async (detail) => {
 };
 
 const findOneUser = async (filter) => {
+	if (!filter) throwError("Filter is required", ErrorCode.BAD_REQUEST);
+	
+	if(filter.value){
+		return await db.User.findOne({
+			$or: [
+				{ username: filter.value },
+				{ email: filter.value } // Assuming username variable contains both username and email
+			]
+		});
+	}
 	return await db.User.findOne(filter);
 };
 

@@ -6,3 +6,8 @@ export const userRegister = [
 	body("password").trim().notEmpty().withMessage("Password is required."),
 	body("confirmPassword").trim().notEmpty().withMessage("Confirm password is required."),
 ];
+
+export const userLogin = [
+	body("username").trim().notEmpty().withMessage("Username or email is required."),
+	body("password").trim().notEmpty().withMessage("Password is required."),
+];

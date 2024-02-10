@@ -1,7 +1,7 @@
-import { generate_token, verify_token } from "../handlers/jwt.handler.js";
+import { verify_token } from "../handlers/jwt.handler.js";
 import { ErrorCode, throwError } from "../handlers/error.handler.js";
-import { getSessionById } from "../components/admin/authorization/authorization.queries.js";
-import { findOneUser } from "../components/admin/users/users.queries.js";
+import { getSessionById } from "../components/authorization/authorization.queries.js";
+import { findOneUser } from "../components/users/user.queries.js";
 
 export const verifyToken = async (req, res, next) => {
 	const authHeader = req.headers.authorization;
